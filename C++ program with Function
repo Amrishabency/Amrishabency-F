@@ -1,0 +1,166 @@
+C++ program with Function:
+#include <iostream>
+#include <string>
+using namespace std;
+
+// Structure to hold student details
+struct Student {
+    string name;
+    int age;
+    string address;
+};
+
+// Function to input details of a student
+void inputStudentDetails(Student& student) {
+    cout << "Enter student name: ";
+    getline(cin, student.name);
+    
+    cout << "Enter student age: ";
+    cin >> student.age;
+    cin.ignore(); // Ignore newline character left in input buffer
+    
+    cout << "Enter student address: ";
+    getline(cin, student.address);
+}
+
+// Function to display details of a student
+void displayStudentDetails(const Student& student) {
+    cout << "Name: " << student.name << endl;
+    cout << "Age: " << student.age << endl;
+    cout << "Address: " << student.address << endl;
+}
+
+int main() {
+    int numStudents;
+    cout << "Enter the number of students: ";
+    cin >> numStudents;
+    cin.ignore(); // Ignore newline character left in input buffer
+
+    Student* students = new Student[numStudents];
+
+    // Input details of each student
+    for (int i = 0; i < numStudents; ++i) {
+        cout << "\nEnter details for student " << (i + 1) << ":" << endl;
+        inputStudentDetails(students[i]);
+    }
+
+    // Display details of each student
+    cout << "\nDetails of all students:" << endl;
+    for (int i = 0; i < numStudents; ++i) {
+        cout << "\nDetails for student " << (i + 1) << ":" << endl;
+        displayStudentDetails(students[i]);
+    }
+
+    // Free memory allocated for students
+    delete[] students;
+
+    return 0;
+}ChatGPT 3.5
+
+User
+Hai 
+
+ChatGPT
+Hello! How can I assist you today?
+
+
+
+User
+Yes
+
+ChatGPT
+Great! If you have any questions or need assistance with anything, feel free to ask.
+
+
+
+User
+C ++ program with function in students details collection 
+
+ChatGPT
+Sure! Here's a simple C++ program that collects details of students using functions:
+
+cpp
+Copy code
+#include <iostream>
+#include <string>
+using namespace std;
+
+// Structure to hold student details
+struct Student {
+    string name;
+    int age;
+    string address;
+};
+
+// Function to input details of a student
+void inputStudentDetails(Student& student) {
+    cout << "Enter student name: ";
+    getline(cin, student.name);
+    
+    cout << "Enter student age: ";
+    cin >> student.age;
+    cin.ignore(); // Ignore newline character left in input buffer
+    
+    cout << "Enter student address: ";
+    getline(cin, student.address);
+}
+
+// Function to display details of a student
+void displayStudentDetails(const Student& student) {
+    cout << "Name: " << student.name << endl;
+    cout << "Age: " << student.age << endl;
+    cout << "Address: " << student.address << endl;
+}
+
+int main() {
+    int numStudents;
+    cout << "Enter the number of students: ";
+    cin >> numStudents;
+    cin.ignore(); // Ignore newline character left in input buffer
+
+    Student* students = new Student[numStudents];
+
+    // Input details of each student
+    for (int i = 0; i < numStudents; ++i) {
+        cout << "\nEnter details for student " << (i + 1) << ":" << endl;
+        inputStudentDetails(students[i]);
+    }
+
+    // Display details of each student
+    cout << "\nDetails of all students:" << endl;
+    for (int i = 0; i < numStudents; ++i) {
+        cout << "\nDetails for student " << (i + 1) << ":" << endl;
+        displayStudentDetails(students[i]);
+    }
+
+    // Free memory allocated for students
+    delete[] students;
+
+    return 0;
+}
+
+Output:
+
+Enter the number of students: 2
+
+Enter details for student 1:
+Enter student name: John Doe
+Enter student age: 20
+Enter student address: 123 Main St
+
+Enter details for student 2:
+Enter student name: Jane Smith
+Enter student age: 22
+Enter student address: 456 Elm St
+
+Details of all students:
+
+Details for student 1:
+Name: John Doe
+Age: 20
+Address: 123 Main St
+
+Details for student 2:
+Name: Jane Smith
+Age: 22
+Address: 456 Elm St
